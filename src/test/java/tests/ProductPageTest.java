@@ -24,7 +24,7 @@ public class ProductPageTest {
     @Test
     public void addToCartTest() {
         open("/pizza/syrnaya-pizza");
-        $(byTagName("h1")).shouldHave(text("Сырная"));
+        $(byTagAndText("h1", "Сырная")).should(exist);
         $(byClassName("sc-8hteo7-21")).click();
         $(byClassName("xlo7eb-9")).click();
         $(byClassName("qt41kr-5")).shouldHave(text("Сырная"));
