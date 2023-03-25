@@ -37,7 +37,9 @@ dependencies {
             "io.qameta.allure:allure-selenide:$allureVersion",
             "org.junit.jupiter:junit-jupiter:$junitVersion",
             "org.slf4j:slf4j-simple:$slf4jVersion",
-            "org.aeonbits.owner:owner:$ownerVersion"
+            "org.aeonbits.owner:owner:$ownerVersion",
+            "org.seleniumhq.selenium:selenium-chrome-driver:4.8.1",
+            "org.seleniumhq.selenium:selenium-java:4.8.1"
     )
 }
 

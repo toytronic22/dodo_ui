@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class HomePageTest {
+public class ProductPageTest {
 
     @BeforeAll
     public static void setUp() {
@@ -18,24 +18,15 @@ public class HomePageTest {
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("browserVersion", "200.0");
         Configuration.remote = System.getProperty("remote");
+        Configuration.timeout = 30000;
     }
 
     @Test
-    public void openPage() {
-        open("/");
-        $(".header__about-slogan-text_locality").shouldHave(text("Москва"));
-    }
-
-    @Test
-    public void checkMainMenu() {
-        open("/");
-        $(byLinkText("Пицца")).shouldBe(visible);
-        $(byLinkText("Комбо")).shouldBe(visible);
-        $(byLinkText("Напитки")).shouldBe(visible);
-        $(byLinkText("Другие товары")).shouldBe(visible);
-        $(byLinkText("Акции")).shouldBe(visible);
-        $(byLinkText("Контакты")).shouldBe(visible);
-        $(byLinkText("О нас")).shouldBe(visible);
-        $(byLinkText("Работа в Додо")).shouldBe(visible);
+    public void addToCartTest() {
+        open("/pizza/syrnaya-pizza");
+        $(byTagName("h1")).shouldHave(text("Сырная"));
+        $(byClassName("sc-8hteo7-21")).click();
+        $(byClassName("xlo7eb-9")).click();
+        $(byClassName("qt41kr-5")).shouldHave(text("Сырная"));
     }
 }
