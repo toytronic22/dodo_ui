@@ -3,7 +3,7 @@ package tests;
 import org.junit.jupiter.api.Test;
 import pages.HomePage;
 
-public class HomePageTest {
+public class TestHomePage {
 
     @Test
     public void openPage() {

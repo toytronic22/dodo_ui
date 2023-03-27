@@ -8,10 +8,10 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class ProductPage {
 
-    private SelenideElement productName = $(byTagAndText("h1", "Сырная"));
-    private SelenideElement addToCartButton = $(byClassName("sc-8hteo7-21"));
-    private SelenideElement goToCartButton = $(byClassName("xlo7eb-9"));
-    private SelenideElement cartProduct = $(byClassName("qt41kr-5"));
+    private final SelenideElement productName = $(byTagAndText("h1", "Сырная"));
+    private final SelenideElement addToCartButton = $(byClassName("sc-8hteo7-21"));
+    private final SelenideElement goToCartButton = $(byClassName("xlo7eb-9"));
+    private final SelenideElement cartProduct = $(byClassName("qt41kr-5"));
 
     public void openPage() {
         open("/pizza/syrnaya-pizza");

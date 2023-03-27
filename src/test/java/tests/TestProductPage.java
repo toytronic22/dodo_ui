@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import pages.ProductPage;
 
-public class ProductPageTest {
+public class TestProductPage {
 
     @BeforeAll
     public static void setUp() {
@@ -14,7 +14,7 @@ public class ProductPageTest {
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("browserVersion", "200.0");
         Configuration.remote = System.getProperty("remote");
-        Configuration.timeout = 30000;
+        Configuration.timeout = 20000;
     }
 
     @Test
