@@ -50,7 +50,7 @@ compileTestJava {
     options.encoding = 'UTF-8'
 }
 
-tasks.withType(Test) {
+def type = tasks.withType(Test) {
     systemProperties(System.getProperties())
     useJUnitPlatform()
 
@@ -62,6 +62,11 @@ tasks.withType(Test) {
                 'junit.jupiter.execution.parallel.config.strategy'         : 'fixed',
                 'junit.jupiter.execution.parallel.config.fixed.parallelism': System.getProperty("threads").toInteger()
         ]
+    }
+    task dodo(type: Test) {
+        useJUnitPlatform {
+            includeTags "dodo"
+        }
     }
 
     testLogging {
