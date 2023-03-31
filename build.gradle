@@ -7,11 +7,11 @@ repositories {
     mavenCentral()
 }
 
-def allureVersion = "2.21.0",
+def allureVersion = "2.20.1",
     restAssuredVersion = "5.3.0",
-    selenideVersion = "6.12.3",
-    junitVersion = "5.9.2",
-    slf4jVersion = "2.0.3",
+    selenideVersion = "6.11.0",
+    junitVersion = "5.9.1",
+    slf4jVersion = "2.0.6",
     ownerVersion = "1.0.12"
 
 allure
@@ -37,9 +37,7 @@ dependencies {
             "io.qameta.allure:allure-selenide:$allureVersion",
             "org.junit.jupiter:junit-jupiter:$junitVersion",
             "org.slf4j:slf4j-simple:$slf4jVersion",
-            "org.aeonbits.owner:owner:$ownerVersion",
-            "org.seleniumhq.selenium:selenium-chrome-driver:4.8.1",
-            "org.seleniumhq.selenium:selenium-java:4.8.1"
+            "org.aeonbits.owner:owner:$ownerVersion"
     )
 }
 
@@ -50,7 +48,7 @@ compileTestJava {
     options.encoding = 'UTF-8'
 }
 
-def type = tasks.withType(Test) {
+tasks.withType(Test) {
     systemProperties(System.getProperties())
     useJUnitPlatform()
 
@@ -66,13 +64,13 @@ def type = tasks.withType(Test) {
     task dodo(type: Test) {
         useJUnitPlatform {
             includeTags "dodo"
-        }
-    }
 
-    testLogging {
-        lifecycle {
-            events "started", "skipped", "failed", "standard_error", "standard_out"
-            exceptionFormat "short"
+            testLogging {
+                lifecycle {
+                    events "started", "skipped", "failed", "standard_error", "standard_out"
+                    exceptionFormat "short"
+                }
+            }
         }
     }
 }
