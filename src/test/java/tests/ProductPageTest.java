@@ -1,6 +1,8 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -23,6 +25,7 @@ public class ProductPageTest {
 
     @Test
     public void addToCartTest() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
         open("/pizza/syrnaya-pizza");
         $(byTagAndText("h1", "Сырная")).should(exist);
         $(byClassName("sc-8hteo7-21")).click();
