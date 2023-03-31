@@ -9,21 +9,20 @@ import static java.lang.System.getProperty;
 
 public class HomePage {
 
-    private SelenideElement localityTitle = $(".header__about-slogan-text_locality");
+    private final SelenideElement localityTitle = $(".header__about-slogan-text_locality");
 
     // локаторы для главного меню
-    private SelenideElement pizzaLink = $(byLinkText("Пицца"));
-    private SelenideElement comboLink = $(byLinkText("Комбо"));
-    private SelenideElement drinksLink = $(byLinkText("Напитки"));
-    private SelenideElement otherProductsLink = $(byLinkText("Другие товары"));
-    private SelenideElement promotionsLink = $(byLinkText("Акции"));
-    private SelenideElement contactsLink = $(byLinkText("Контакты"));
-    private SelenideElement aboutUsLink = $(byLinkText("О нас"));
-    private SelenideElement careersLink = $(byLinkText("Работа в Додо"));
+    private final SelenideElement pizzaLink = $(byLinkText("Пицца"));
+    private final SelenideElement comboLink = $(byLinkText("Комбо"));
+    private final SelenideElement drinksLink = $(byLinkText("Напитки"));
+    private final SelenideElement otherProductsLink = $(byLinkText("Другие товары"));
+    private final SelenideElement promotionsLink = $(byLinkText("Акции"));
+    private final SelenideElement contactsLink = $(byLinkText("Контакты"));
+    private final SelenideElement aboutUsLink = $(byLinkText("О нас"));
+    private final SelenideElement careersLink = $(byLinkText("Работа в Додо"));
 
     public HomePage open() {
-        String baseUrl = "https://dodopizza.ru/moscow";
-        Configuration.baseUrl = baseUrl;
+        Configuration.baseUrl = "https://dodopizza.ru/moscow";
         Configuration.browserSize = "1920x1080";
         Configuration.browser = "chrome";
         Configuration.browserVersion = "200.0";
