@@ -9,7 +9,6 @@ import static java.lang.System.getProperty;
 
 public class HomePage {
 
-    // локатор для заголовка главной страницы
     private SelenideElement localityTitle = $(".header__about-slogan-text_locality");
 
     // локаторы для главного меню

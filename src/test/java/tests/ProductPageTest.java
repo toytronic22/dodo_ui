@@ -3,7 +3,11 @@ package tests;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import pages.ProductPage;
+
+import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selectors.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
 public class ProductPageTest {
 
@@ -19,11 +23,10 @@ public class ProductPageTest {
 
     @Test
     public void addToCartTest() {
-        ProductPage productPage = new ProductPage();
-        productPage.openPage();
-        productPage.checkProductName();
-        productPage.addToCart();
-        productPage.goToCart();
-        productPage.checkCartProduct();
+        open("/pizza/syrnaya-pizza");
+        $(byTagAndText("h1", "Сырная")).should(exist);
+        $(byClassName("sc-8hteo7-21")).click();
+        $(byClassName("xlo7eb-9")).click();
+        $(byClassName("qt41kr-5")).shouldHave(text("Сырная"));
     }
 }
