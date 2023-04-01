@@ -1,6 +1,6 @@
 package pages;
 
-import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Condition.exist;
@@ -14,8 +14,15 @@ public class ProductPage {
     private final SelenideElement cartButton = $(byClassName("xlo7eb-9"));
     private final SelenideElement addedProductTitle = $(byTagAndText("h3","Сырная"));
 
-    public void openProductPage() {
-        Selenide.open("https://dodopizza.ru/moscow/pizza/syrnaya-pizza");
+    public ProductPage open() {
+        Configuration.baseUrl = "https://dodopizza.ru/moscow/pizza/syrnaya-pizza";
+        Configuration.browserSize = "1920x1080";
+        Configuration.browser = "chrome";
+        Configuration.browserVersion = "200.0";
+        Configuration.remote = System.getProperty("remote");
+        Configuration.timeout = 30000;
+        com.codeborne.selenide.Selenide.open("/");
+        return this;
     }
     public void checkProductTitleExists() {
         productTitle.should(exist);

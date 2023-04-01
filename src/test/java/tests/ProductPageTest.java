@@ -14,7 +14,7 @@ public class ProductPageTest extends TestBase {
     @DisplayName("Check Adding Exact Product to Cart")
     public void addToCartTest() {
         step("Открытие страницы продукта", () -> {
-            productPage.openProductPage();
+            productPage.open();
         });
         step("Проверка названия продукта", () -> {
             productPage.checkProductTitleExists();
