@@ -20,14 +20,12 @@ public class HomePageTest extends TestBase {
 
     @Test
     @Tag(value = "dodo")
-    @DisplayName("Check Localization and Main Menu")
+    @DisplayName("Check Location and Main Menu")
     public void checkLocalizationAndMainMenu() {
         HomePage homePage = new HomePage().open();
         step("Проверка локали Москва", () -> {
             assertTrue(homePage.getLocalityTitle().contains("Москва"));
         });
-        step("Проверка главного меню", () -> {
-            homePage.checkMainMenu();
-        });
+        step("Проверка главного меню", homePage::checkMainMenu);
     }
 }

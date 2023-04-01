@@ -11,7 +11,6 @@ import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
-import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
     private static final CredentialsConfig configs = ConfigFactory.create(CredentialsConfig.class);
