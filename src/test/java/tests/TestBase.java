@@ -17,7 +17,6 @@ public class TestBase {
 
     @BeforeAll
     static void setUp() {
-        openWebDriver();
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         Configuration.baseUrl = "https://dodopizza.ru/moscow";
         Configuration.browser = System.getProperty("browser", "chrome");
