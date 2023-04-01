@@ -17,6 +17,7 @@ public class TestBase {
 
     @BeforeAll
     static void setUp() {
+        openWebDriver();
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         Configuration.baseUrl = "https://dodopizza.ru/moscow";
         Configuration.browser = System.getProperty("browser", "chrome");
@@ -27,6 +28,9 @@ public class TestBase {
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
         Configuration.pageLoadTimeout = 40000;
+    }
+
+    private static void openWebDriver() {
     }
 
     @AfterEach

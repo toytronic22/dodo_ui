@@ -13,7 +13,7 @@ public class ProductPageTest extends TestBase {
 
     @Test
     @Tag(value = "dodo")
-    @DisplayName("Check Localization and Main Menu")
+    @DisplayName("Check Pro")
     public void addToCartTest() {
         step("Открытие страницы продукта", () -> {
             productPage = open("/pizza/syrnaya-pizza", ProductPage.class);
