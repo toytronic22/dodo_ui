@@ -10,6 +10,8 @@ import pages.ProductPage;
 
 import static com.codeborne.selenide.Configuration.*;
 import static com.codeborne.selenide.Selenide.open;
+import static io.qameta.allure.Allure.step;
+
 public class ProductPageTest extends TestBase {
 
 //    @BeforeAll
@@ -27,6 +29,9 @@ public class ProductPageTest extends TestBase {
     @Tag(value = "dodo")
     @DisplayName("Check Localization and Main Menu")
     public void addToCartTest() {
+        step("Открытие главной страницы", () -> {
+            open("");
+        });
         ProductPage productPage = open("/pizza/syrnaya-pizza", ProductPage.class);
         productPage.checkProductTitleExists();
         productPage.addToCart();
