@@ -11,6 +11,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
+import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
     private static final CredentialsConfig configs = ConfigFactory.create(CredentialsConfig.class);
@@ -31,6 +32,10 @@ public class TestBase {
     }
 
     private static void openWebDriver() {
+        Configuration.browserSize = "1920x1080";
+        Configuration.timeout = 10000;
+        Configuration.pollingInterval = 500;
+        Configuration.reportsFolder = "target/allure-results";
     }
 
     @AfterEach
