@@ -10,33 +10,29 @@ import org.junit.jupiter.api.Test;
 import pages.HomePage;
 
 import static io.qameta.allure.Allure.step;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Owner("Alexey Martynov")
 @Feature("Задачи в репозитории")
 @Story("Просмотр созданных задач в репозитории")
-@Link(value = "Тестинг", url = "https://github.com")
+@Link(value = "Тест dodo_ui", url = "https://github.com/toytronic22/dodo_ui")
 
 
-public class HomePageTest {
+public class HomePageTest extends TestBase {
     HomePage homePage = new HomePage();
 
     @Test
     @Tag(value = "dodo")
-    @DisplayName("Check Localization")
-    public void openPage() {
-        step("Открытие страницы - https://dodopizza.ru/", () -> {
+    @DisplayName("Check Localization and Main Menu")
+    public void checkLocalizationAndMainMenu() {
+        step("Открытие главной страницы", () -> {
             homePage.open();
         });
         step("Проверка локали Москва", () -> {
-            homePage.getLocalityTitle()
-                    .contains("Москва");
+            assertTrue(homePage.getLocalityTitle().contains("Москва"));
         });
-    }
-
-    @Test
-    public void checkMainMenu() {
-        new HomePage()
-                .open()
-                .checkMainMenu();
+        step("Проверка главного меню", () -> {
+            homePage.checkMainMenu();
+        });
     }
 }
