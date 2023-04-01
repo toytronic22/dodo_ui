@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.HomePage;
 
+import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -26,7 +27,7 @@ public class HomePageTest extends TestBase {
     @DisplayName("Check Localization and Main Menu")
     public void checkLocalizationAndMainMenu() {
         step("Открытие главной страницы", () -> {
-            homePage.open();
+            open("");
         });
         step("Проверка локали Москва", () -> {
             assertTrue(homePage.getLocalityTitle().contains("Москва"));
