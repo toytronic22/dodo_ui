@@ -18,17 +18,13 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @Story("Просмотр созданных задач в репозитории")
 @Link(value = "Тест dodo_ui", url = "https://github.com/toytronic22/dodo_ui")
 
-
 public class HomePageTest extends TestBase {
-    HomePage homePage = new HomePage();
 
     @Test
     @Tag(value = "dodo")
     @DisplayName("Check Localization and Main Menu")
     public void checkLocalizationAndMainMenu() {
-        step("Открытие главной страницы", () -> {
-            open("");
-        });
+        HomePage homePage = new HomePage().open();
         step("Проверка локали Москва", () -> {
             assertTrue(homePage.getLocalityTitle().contains("Москва"));
         });
