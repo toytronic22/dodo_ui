@@ -14,14 +14,14 @@ public class ProductPageTest extends TestBase {
 
     @BeforeAll
     public static void setUp() {
-        baseUrl = "https://dodopizza.ru/moscow"; }
-//        browserSize = System.getProperty("browserSize", "1920x1080");
-//        browser = System.getProperty("browser", "chrome");
-//        browserVersion = System.getProperty("browserVersion", "200.0");
-//        remote = System.getProperty("remote");
-//        timeout = 30000;
-//        SelenideLogger.addListener("allure", new AllureSelenide());
-//    }
+        baseUrl = "https://dodopizza.ru/moscow";
+        browserSize = System.getProperty("browserSize", "1920x1080");
+        browser = System.getProperty("browser", "chrome");
+        browserVersion = System.getProperty("browserVersion", "200.0");
+        remote = System.getProperty("remote");
+        timeout = 30000;
+        SelenideLogger.addListener("allure", new AllureSelenide());
+    }
 
     @Test
     @Tag(value = "dodo")
