@@ -4,8 +4,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.ProductPage;
-
-import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 public class ProductPageTest extends TestBase {
@@ -25,7 +23,7 @@ public class ProductPageTest extends TestBase {
             productPage.addToCart();
         });
         step("Проверка названия продукта в корзине", () -> {
-            productPage.checkAddedProductTitle("Сырная");
+            productPage.checkAddedProductTitle();
         });
     }
 }
