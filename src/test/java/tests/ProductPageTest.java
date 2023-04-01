@@ -13,10 +13,10 @@ public class ProductPageTest extends TestBase {
 
     @Test
     @Tag(value = "dodo")
-    @DisplayName("Check Pro")
+    @DisplayName("Check Adding Exact Product to Cart")
     public void addToCartTest() {
         step("Открытие страницы продукта", () -> {
-            productPage = open("/pizza/syrnaya-pizza", ProductPage.class);
+            productPage.open();
         });
         step("Проверка названия продукта", () -> {
             productPage.checkProductTitleExists();
