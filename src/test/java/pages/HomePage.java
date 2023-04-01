@@ -10,8 +10,6 @@ import static java.lang.System.getProperty;
 public class HomePage {
 
     private final SelenideElement localityTitle = $(".header__about-slogan-text_locality");
-
-    // локаторы для главного меню
     private final SelenideElement pizzaLink = $(byLinkText("Пицца"));
     private final SelenideElement comboLink = $(byLinkText("Комбо"));
     private final SelenideElement drinksLink = $(byLinkText("Напитки"));

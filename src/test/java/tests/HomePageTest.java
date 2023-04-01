@@ -5,9 +5,9 @@ import io.qameta.allure.Link;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.HomePage;
-import org.junit.jupiter.api.Tag;
 
 import static io.qameta.allure.Allure.step;
 
@@ -21,8 +21,8 @@ public class HomePageTest {
     HomePage homePage = new HomePage();
 
     @Test
-    @Tag("dodo")
-    @DisplayName("Check Title")
+    @Tag(value = "dodo")
+    @DisplayName("Check Localization")
     public void openPage() {
         step("Открытие страницы - https://dodopizza.ru/", () -> {
             homePage.open();
@@ -33,10 +33,10 @@ public class HomePageTest {
         });
     }
 
-        @Test
-        public void checkMainMenu() {
-            new HomePage()
-                    .open()
-                    .checkMainMenu();
-        }
+    @Test
+    public void checkMainMenu() {
+        new HomePage()
+                .open()
+                .checkMainMenu();
     }
+}
