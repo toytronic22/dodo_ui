@@ -9,17 +9,23 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 public class ProductPageTest extends TestBase {
+    ProductPage productPage = new ProductPage();
 
     @Test
     @Tag(value = "dodo")
     @DisplayName("Check Localization and Main Menu")
     public void addToCartTest() {
         step("Открытие страницы продукта", () -> {
-            ProductPage productPage = open("/pizza/syrnaya-pizza", ProductPage.class);
+            productPage = open("/pizza/syrnaya-pizza", ProductPage.class);
         });
-        ProductPage productPage = new ProductPage();
-        productPage.checkProductTitleExists();
-        productPage.addToCart();
-        productPage.checkAddedProductTitle("Сырная");
+        step("Проверка названия продукта", () -> {
+            productPage.checkProductTitleExists();
+        });
+        step("Добавление продукта в корзину", () -> {
+            productPage.addToCart();
+        });
+        step("Проверка названия продукта в корзине", () -> {
+            productPage.checkAddedProductTitle("Сырная");
+        });
     }
 }
