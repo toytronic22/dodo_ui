@@ -12,8 +12,9 @@ public class ProductPage {
     private final SelenideElement productTitle = $(byTagAndText("h1", "Сырная"));
     private final SelenideElement addButton = $(byClassName("sc-8hteo7-21"));
     private final SelenideElement cartButton = $(byClassName("xlo7eb-9"));
-    private final SelenideElement addedProductTitle = $(byTagAndText("h3", "Сырная пицца"));
-    public void open() {
+    private final SelenideElement addedProductTitle = $(byTagAndText("h3","Сырная"));
+
+    public void openProductPage() {
         Selenide.open("https://dodopizza.ru/moscow/pizza/syrnaya-pizza");
     }
     public void checkProductTitleExists() {
