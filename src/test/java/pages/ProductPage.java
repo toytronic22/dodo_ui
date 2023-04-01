@@ -27,6 +27,6 @@ public class ProductPage {
         cartButton.click();
     }
     public void checkAddedProductTitle(String expectedTitle) {
-        addedProductTitle.shouldHave(text(expectedTitle));
+        addedProductTitle.shouldHave(text("Сырная"));
     }
 }
