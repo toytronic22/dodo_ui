@@ -5,30 +5,24 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selectors.byLinkText;
 import static com.codeborne.selenide.Selenide.$;
-import static java.lang.System.getProperty;
 
 public class HomePage {
-
-    // локатор для заголовка главной страницы
-    private SelenideElement localityTitle = $(".header__about-slogan-text_locality");
-
-    // локаторы для главного меню
-    private SelenideElement pizzaLink = $(byLinkText("Пицца"));
-    private SelenideElement comboLink = $(byLinkText("Комбо"));
-    private SelenideElement drinksLink = $(byLinkText("Напитки"));
-    private SelenideElement otherProductsLink = $(byLinkText("Другие товары"));
-    private SelenideElement promotionsLink = $(byLinkText("Акции"));
-    private SelenideElement contactsLink = $(byLinkText("Контакты"));
-    private SelenideElement aboutUsLink = $(byLinkText("О нас"));
-    private SelenideElement careersLink = $(byLinkText("Работа в Додо"));
+    private final SelenideElement localityTitle = $(".header__about-slogan-text_locality");
+    private final SelenideElement pizzaLink = $(byLinkText("Пицца"));
+    private final SelenideElement comboLink = $(byLinkText("Комбо"));
+    private final SelenideElement drinksLink = $(byLinkText("Напитки"));
+    private final SelenideElement otherProductsLink = $(byLinkText("Другие товары"));
+    private final SelenideElement promotionsLink = $(byLinkText("Акции"));
+    private final SelenideElement contactsLink = $(byLinkText("Контакты"));
+    private final SelenideElement aboutUsLink = $(byLinkText("О нас"));
+    private final SelenideElement careersLink = $(byLinkText("Работа в Додо"));
 
     public HomePage open() {
-        String baseUrl = "https://dodopizza.ru/moscow";
-        Configuration.baseUrl = baseUrl;
+        Configuration.baseUrl = "https://dodopizza.ru/moscow";
         Configuration.browserSize = "1920x1080";
         Configuration.browser = "chrome";
         Configuration.browserVersion = "200.0";
-        Configuration.remote = getProperty("remote");
+        Configuration.remote = System.getProperty("remote");
         Configuration.timeout = 30000;
         com.codeborne.selenide.Selenide.open("/");
         return this;
@@ -48,4 +42,5 @@ public class HomePage {
         aboutUsLink.shouldBe(Condition.visible);
         careersLink.shouldBe(Condition.visible);
     }
+
 }

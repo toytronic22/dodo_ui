@@ -1,29 +1,38 @@
 package tests;
 
-import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.BeforeAll;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Link;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Story;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.ProductPage;
+import static io.qameta.allure.Allure.step;
 
-public class TestProductPage {
+@Owner("Alexey Martynov")
+@Feature("Задачи в репозитории")
+@Story("Просмотр созданных задач в репозитории")
+@Link(value = "Тест dodo_ui", url = "https://github.com/toytronic22/dodo_ui")
 
-    @BeforeAll
-    public static void setUp() {
-        Configuration.baseUrl = "https://dodopizza.ru/moscow";
-        Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
-        Configuration.browser = System.getProperty("browser", "chrome");
-        Configuration.browserVersion = System.getProperty("browserVersion", "200.0");
-        Configuration.remote = System.getProperty("remote");
-        Configuration.timeout = 20000;
-    }
+public class ProductPageTest extends TestBase {
+    ProductPage productPage = new ProductPage();
 
     @Test
+    @Tag(value = "dodo")
+    @DisplayName("Check Adding Exact Product to Cart")
     public void addToCartTest() {
-        ProductPage productPage = new ProductPage();
-        productPage.openPage();
-        productPage.checkProductName();
-        productPage.addToCart();
-        productPage.goToCart();
-        productPage.checkCartProduct();
+        step("Открытие страницы продукта", () -> {
+            productPage.open();
+        });
+        step("Проверка названия продукта", () -> {
+            productPage.checkProductTitleExists();
+        });
+        step("Добавление продукта в корзину", () -> {
+            productPage.addToCart();
+        });
+        step("Проверка названия продукта в корзине", () -> {
+            productPage.checkAddedProductTitle();
+        });
     }
 }
