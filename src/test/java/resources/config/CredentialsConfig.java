@@ -1,7 +1,7 @@
-package config;
+package resources.config;
 import org.aeonbits.owner.Config;
 
-@Config.Sources("classpath:config/credentials.properties")
+@Config.Sources("classpath:resources.config/credentials.properties")
 public interface CredentialsConfig extends Config {
     String selenoidLogin();
     String selenoidPass();
