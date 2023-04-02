@@ -50,7 +50,7 @@ compileTestJava {
     options.encoding = 'UTF-8'
 }
 
-tasks.withType(Test) {
+tasks.withType(Test).configureEach {
     systemProperties(System.getProperties())
     useJUnitPlatform()
 
@@ -63,10 +63,10 @@ tasks.withType(Test) {
                 'junit.jupiter.execution.parallel.config.fixed.parallelism': System.getProperty("threads").toInteger()
         ]
     }
-            testLogging {
-                lifecycle {
-                    events "started", "skipped", "failed", "standard_error", "standard_out"
-                    exceptionFormat "short"
-                }
-            }
+    testLogging {
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
         }
+    }
+}
