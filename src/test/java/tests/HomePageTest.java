@@ -19,9 +19,9 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class HomePageTest extends TestBase {
 
     @Test
-    @Tag(value = "dodo")
+    @Tag("dodo")
     @DisplayName("Check Location and Main Menu")
-    public void checkLocalizationAndMainMenu() {
+    public void checkLocationAndMainMenu() {
         HomePage homePage = new HomePage().open();
         step("Проверка локали Москва", () -> {
             assertTrue(homePage.getLocalityTitle().contains("Москва"));

@@ -19,7 +19,6 @@ public class ProductPageTest extends TestBase {
     ProductPage productPage = new ProductPage();
 
     @Test
-    @Tag(value = "dodo")
     @DisplayName("Check Adding Exact Product to Cart")
     public void addToCartTest() {
         step("Открытие страницы продукта", () -> {

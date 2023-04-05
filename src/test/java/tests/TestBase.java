@@ -26,13 +26,7 @@ public class TestBase {
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
         Configuration.pageLoadTimeout = 40000;
-    }
 
-    private static void openWebDriver() {
-        Configuration.browserSize = "1920x1080";
-        Configuration.timeout = 10000;
-        Configuration.pollingInterval = 500;
-        Configuration.reportsFolder = "target/allure-results";
     }
 
     @AfterEach
