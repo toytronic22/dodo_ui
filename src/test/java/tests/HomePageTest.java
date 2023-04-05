@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @Story("Просмотр созданных задач в репозитории")
 @Link(value = "Тест dodo_ui", url = "https://github.com/toytronic22/dodo_ui")
 
-public class HomePageTest extends TestBase {
+public class HomePageTest extends TestBase2 {
 
     @Test
     @Tag("dodo")

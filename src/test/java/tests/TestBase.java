@@ -28,6 +28,7 @@ public class TestBase {
         Configuration.pageLoadTimeout = 40000;
 
     }
+    
 
     @AfterEach
     void addAttachments() {

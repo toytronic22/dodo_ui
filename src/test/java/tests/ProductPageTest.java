@@ -5,7 +5,6 @@ import io.qameta.allure.Link;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.ProductPage;
 import static io.qameta.allure.Allure.step;
@@ -15,7 +14,7 @@ import static io.qameta.allure.Allure.step;
 @Story("Просмотр созданных задач в репозитории")
 @Link(value = "Тест dodo_ui", url = "https://github.com/toytronic22/dodo_ui")
 
-public class ProductPageTest extends TestBase {
+public class ProductPageTest extends TestBase2 {
     ProductPage productPage = new ProductPage();
 
     @Test
