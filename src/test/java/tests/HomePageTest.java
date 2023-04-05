@@ -24,9 +24,8 @@ public class HomePageTest extends TestBase2 {
     @Tag("dodo")
     @DisplayName("Check Location and Main Menu")
     public void checkLocationAndMainMenu() {
-//        HomePage homePage = new HomePage().open();
         step("Открытие страницы - https://dodopizza.ru/moscow", () -> {
-            open("/");
+            homePage.open();
         });
         step("Проверка локали Москва", () -> {
             assertTrue(homePage.getLocalityTitle().contains("Москва"));

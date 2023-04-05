@@ -18,19 +18,10 @@ public class HomePage {
     private final SelenideElement aboutUsLink = $(byLinkText("О нас"));
     private final SelenideElement careersLink = $(byLinkText("Работа в Додо"));
 
-//    public HomePage open() {
-//        step("Открытие страницы - https://astrio.ru/", () -> {
-//            open();
-//        });
-//        Configuration.baseUrl = "https://dodopizza.ru/moscow";
-//        Configuration.browserSize = "1920x1080";
-//        Configuration.browser = "chrome";
-//        Configuration.browserVersion = "200.0";
-//        Configuration.remote = System.getProperty("remote");
-//        Configuration.timeout = 30000;
-//        com.codeborne.selenide.Selenide.open("/");
-//        return this;
-//    }
+    public HomePage open() {
+       com.codeborne.selenide.Selenide.open("");
+       return this;
+   }
     public String getLocalityTitle() {
         return localityTitle.getText();
     }
