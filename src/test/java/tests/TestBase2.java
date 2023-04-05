@@ -32,7 +32,7 @@ public class TestBase2 {
 
     @AfterEach
     public void afterEach() {
-        Attach.screenshotAs("Last screenshot");
+        Attach.screenshotAs();
         Attach.pageSource();
         Attach.browserConsoleLogs();
         if (useRemote.equals("remote")) {

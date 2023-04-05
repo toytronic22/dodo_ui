@@ -28,11 +28,11 @@ public class TestBase {
         Configuration.pageLoadTimeout = 40000;
 
     }
-    
+
 
     @AfterEach
     void addAttachments() {
-        Attach.screenshotAs("Last screenshot");
+        Attach.screenshotAs();
         Attach.pageSource();
         Attach.browserConsoleLogs();
         Attach.addVideo();
