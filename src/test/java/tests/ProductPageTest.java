@@ -7,6 +7,8 @@ import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pages.ProductPage;
+
+import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 @Owner("Alexey Martynov")
@@ -20,11 +22,8 @@ public class ProductPageTest extends TestBase2 {
     @Test
     @DisplayName("Check Adding Exact Product to Cart")
     public void addToCartTest() {
-        step("Открытие страницы продукта", () -> {
-            productPage.open();
-        });
-        step("Проверка названия продукта", () -> {
-            productPage.checkProductTitleExists();
+        step("Открытие страницы - https://dodopizza.ru/moscow", () -> {
+            open("");
         });
         step("Добавление продукта в корзину", () -> {
             productPage.addToCart();

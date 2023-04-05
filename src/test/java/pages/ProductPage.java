@@ -15,11 +15,11 @@ public class ProductPage {
     private final SelenideElement cartButton = $(byClassName("xlo7eb-9"));
     private final SelenideElement addedProductTitle = $(byTagAndText("h3","Сырная"));
 
-    public ProductPage open() {
-        step("Открыть главную страницу", () ->
-                open());
-        return this;
-    }
+//    public ProductPage open() {
+//        step("Открыть главную страницу", () ->
+//                open());
+//        return this;
+//    }
     public void checkProductTitleExists() {
         productTitle.should(exist);
     }
