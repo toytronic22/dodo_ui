@@ -7,6 +7,7 @@ import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Selectors.byClassName;
 import static com.codeborne.selenide.Selectors.byTagAndText;
 import static com.codeborne.selenide.Selenide.$;
+import static io.qameta.allure.Allure.step;
 
 public class ProductPage {
     private final SelenideElement productTitle = $(byTagAndText("h1", "Сырная"));
@@ -15,13 +16,8 @@ public class ProductPage {
     private final SelenideElement addedProductTitle = $(byTagAndText("h3","Сырная"));
 
     public ProductPage open() {
-        Configuration.baseUrl = "https://dodopizza.ru/moscow/pizza/syrnaya-pizza";
-        Configuration.browserSize = "1920x1080";
-        Configuration.browser = "chrome";
-        Configuration.browserVersion = "200.0";
-        Configuration.remote = System.getProperty("remote");
-        Configuration.timeout = 30000;
-        com.codeborne.selenide.Selenide.open("/");
+        step("Открыть главную страницу", () ->
+                open());
         return this;
     }
     public void checkProductTitleExists() {

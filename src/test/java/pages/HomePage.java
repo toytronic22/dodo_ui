@@ -5,6 +5,7 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selectors.byLinkText;
 import static com.codeborne.selenide.Selenide.$;
+import static io.qameta.allure.Allure.step;
 
 public class HomePage {
     private final SelenideElement localityTitle = $(".header__about-slogan-text_locality");
@@ -18,16 +19,17 @@ public class HomePage {
     private final SelenideElement careersLink = $(byLinkText("Работа в Додо"));
 
     public HomePage open() {
-        Configuration.baseUrl = "https://dodopizza.ru/moscow";
-        Configuration.browserSize = "1920x1080";
-        Configuration.browser = "chrome";
-        Configuration.browserVersion = "200.0";
-        Configuration.remote = System.getProperty("remote");
-        Configuration.timeout = 30000;
-        com.codeborne.selenide.Selenide.open("/");
+        step("Открыть главную страницу", () ->
+                open());
+//        Configuration.baseUrl = "https://dodopizza.ru/moscow";
+//        Configuration.browserSize = "1920x1080";
+//        Configuration.browser = "chrome";
+//        Configuration.browserVersion = "200.0";
+//        Configuration.remote = System.getProperty("remote");
+//        Configuration.timeout = 30000;
+//        com.codeborne.selenide.Selenide.open("/");
         return this;
     }
-
     public String getLocalityTitle() {
         return localityTitle.getText();
     }
