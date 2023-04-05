@@ -1,4 +1,4 @@
-package web.drivers;
+package drivers;
 
 import com.codeborne.selenide.Configuration;
 import config.WebConfig;
