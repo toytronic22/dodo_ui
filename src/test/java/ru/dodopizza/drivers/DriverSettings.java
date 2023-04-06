@@ -1,18 +1,34 @@
 package ru.dodopizza.drivers;
 
 import com.codeborne.selenide.Configuration;
-import ru.dodopizza.config.WebConfig;
-import org.aeonbits.owner.ConfigFactory;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import ru.dodopizza.config.Project;
 
 public class DriverSettings {
+    public static void configure() {
+        Configuration.browser = Project.config.browser();
+        Configuration.browserVersion = Project.config.browserVersion();
+        Configuration.browserSize = Project.config.browserSize();
+        Configuration.baseUrl = Project.config.baseUrl();
 
-    static WebConfig config = ConfigFactory.create(WebConfig.class);
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        ChromeOptions chromeOptions = new ChromeOptions();
 
-    public static void configuration() {
+        chromeOptions.addArguments("--no-sandbox");
+        chromeOptions.addArguments("--disable-infobars");
+        chromeOptions.addArguments("--disable-popup-blocking");
+        chromeOptions.addArguments("--disable-notifications");
+        chromeOptions.addArguments("--lang=en-en");
 
-        Configuration.baseUrl = config.baseUrl();
-        Configuration.browserSize = config.browserSize();
-        Configuration.browser = config.browserName();
-        Configuration.browserVersion = config.browserVersion();
+        String remoteUrl = Project.config.remoteDriverUrl();
+        if (remoteUrl != null) {
+            capabilities.setCapability("enableVNC", true);
+            capabilities.setCapability("enableVideo", true);
+            Configuration.remote = Project.config.remoteDriverUrl();
+        }
+
+        capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+        Configuration.browserCapabilities = capabilities;
     }
 }

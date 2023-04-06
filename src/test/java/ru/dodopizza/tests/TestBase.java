@@ -1,30 +1,28 @@
 package ru.dodopizza.tests;
 
-import ru.dodopizza.helpers.Attach;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-//import config.CredentialsConfig;
+import org.junit.jupiter.api.BeforeEach;
+import ru.dodopizza.drivers.DriverSettings;
+import ru.dodopizza.helpers.Attach;
 
-import static com.codeborne.selenide.Selenide.closeWebDriver;
+import static com.codeborne.selenide.Selenide.clearBrowserCookies;
+import static com.codeborne.selenide.Selenide.clearBrowserLocalStorage;
+import static io.qameta.allure.Allure.step;
 
 public class TestBase {
-//    private static final CredentialsConfig configs = ConfigFactory.create(CredentialsConfig.class);
 
     @BeforeAll
-    static void setUp() {
-//        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-//        Configuration.baseUrl = "https://dodopizza.ru/moscow";
-//        Configuration.browser = System.getProperty("browser", "chrome");
-//        Configuration.browserSize = System.getProperty("browsersize");
-//        Configuration.remote = "https://" + configs.selenoidLogin() + ":" + configs.selenoidPass() + "@" + System.getProperty("selenoid_server");
-//        DesiredCapabilities capabilities = new DesiredCapabilities();
-//        capabilities.setCapability("enableVNC", true);
-//        capabilities.setCapability("enableVideo", true);
-//        Configuration.browserCapabilities = capabilities;
-//        Configuration.pageLoadTimeout = 40000;
-
+    static void configure() {
+        DriverSettings.configure();
     }
 
+    @BeforeEach
+    void addListener() {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+    }
 
     @AfterEach
     void addAttachments() {
@@ -32,6 +30,9 @@ public class TestBase {
         Attach.pageSource();
         Attach.browserConsoleLogs();
         Attach.addVideo();
-        closeWebDriver();
+        step("Очищаем cookies", () -> {
+            clearBrowserCookies();
+            clearBrowserLocalStorage();
+        });
     }
 }

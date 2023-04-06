@@ -1,17 +1,17 @@
 plugins {
     id 'java-library'
-    id 'io.qameta.allure' version '2.11.2'
+    id 'io.qameta.allure' version '2.11.0'
 }
 
 repositories {
     mavenCentral()
 }
 
-def allureVersion = "2.21.0",
+def allureVersion = "2.20.1",
     restAssuredVersion = "5.3.0",
-    selenideVersion = "6.12.4",
-    junitVersion = "5.9.2",
-    slf4jVersion = "2.0.7",
+    selenideVersion = "6.13.0",
+    junitVersion = "5.9.1",
+    slf4jVersion = "2.0.6",
     ownerVersion = "1.0.12"
 
 allure
@@ -20,7 +20,6 @@ allure
                 version.set(allureVersion)
             }
             adapter {
-
                 aspectjWeaver.set(true)
                 frameworks {
                     junit5 {
@@ -29,7 +28,6 @@ allure
                 }
             }
         }
-
 
 dependencies {
     testImplementation(
@@ -50,7 +48,7 @@ compileTestJava {
     options.encoding = 'UTF-8'
 }
 
-tasks.withType(Test).configureEach {
+tasks.withType(Test) {
     systemProperties(System.getProperties())
     useJUnitPlatform()
 
@@ -63,6 +61,7 @@ tasks.withType(Test).configureEach {
                 'junit.jupiter.execution.parallel.config.fixed.parallelism': System.getProperty("threads").toInteger()
         ]
     }
+
     testLogging {
         lifecycle {
             events "started", "skipped", "failed", "standard_error", "standard_out"

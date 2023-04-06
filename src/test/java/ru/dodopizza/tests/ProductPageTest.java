@@ -18,7 +18,7 @@ import static io.qameta.allure.Allure.step;
 @Story("Просмотр созданных задач в репозитории")
 @Link(value = "Тест dodo_ui", url = "https://github.com/toytronic22/dodo_ui")
 
-public class ProductPageTest extends TestBase2 {
+public class ProductPageTest extends TestBase {
     ProductPage productPage = new ProductPage();
 
     @Test
