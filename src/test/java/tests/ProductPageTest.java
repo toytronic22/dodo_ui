@@ -5,6 +5,7 @@ import io.qameta.allure.Link;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.ProductPage;
 
@@ -22,6 +23,7 @@ public class ProductPageTest extends TestBase2 {
 
     @Test
     @DisplayName("Check Adding Exact Product to Cart")
+    @Tag("dodo")
     public void addToCartTest() {
         step("Открытие страницы - https://dodopizza.ru/moscow", () -> {
             open(baseUrl);

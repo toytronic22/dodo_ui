@@ -2,9 +2,9 @@ package pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+
 import static com.codeborne.selenide.Selectors.byLinkText;
 import static com.codeborne.selenide.Selenide.$;
-import static io.qameta.allure.Allure.step;
 
 public class HomePage {
     private final SelenideElement localityTitle = $(".header__about-slogan-text_locality");
@@ -17,10 +17,9 @@ public class HomePage {
     private final SelenideElement aboutUsLink = $(byLinkText("О нас"));
     private final SelenideElement careersLink = $(byLinkText("Работа в Додо"));
 
-    public HomePage open(String baseUrl) {
-       com.codeborne.selenide.Selenide.open("");
-       return this;
-   }
+    public void open() {
+       com.codeborne.selenide.Selenide.open("/");
+    }
     public String getLocalityTitle() {
         return localityTitle.getText();
     }
