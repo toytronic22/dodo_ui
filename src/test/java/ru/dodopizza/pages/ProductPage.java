@@ -8,7 +8,6 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class ProductPage {
-    private final SelenideElement productTitle = $(byTagAndText("h1", "Сырная"));
     private final SelenideElement addButton = $(byClassName("sc-8hteo7-21"));
 
     private final SelenideElement cartButton = $(byClassName("xlo7eb-9"));
