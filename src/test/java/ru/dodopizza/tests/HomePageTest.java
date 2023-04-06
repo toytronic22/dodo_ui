@@ -20,7 +20,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class HomePageTest extends TestBase {
     HomePage homePage = new HomePage();
     @Test
-    @Tag("dodo")
     @DisplayName("Check Location and Main Menu")
     public void checkLocationAndMainMenu() {
         step("Открытие страницы - https://dodopizza.ru/moscow", () -> {
