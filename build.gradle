@@ -30,11 +30,11 @@ compileTestJava {
 }
 dependencies {
     testImplementation(
-            'org.junit.jupiter:junit-jupiter:5.9.0',
-            'com.codeborne:selenide:6.9.0',
+            'org.junit.jupiter:junit-jupiter:5.9.2',
+            'com.codeborne:selenide:6.13.0',
             'org.slf4j:slf4j-simple:2.0.3',
-            'io.qameta.allure:allure-selenide:2.20.0',
-            'org.assertj:assertj-core:3.23.1',
+            'io.qameta.allure:allure-selenide:2.21.0',
+            'org.assertj:assertj-core:3.24.2',
             'org.aeonbits.owner:owner:1.0.12'
     )
 }
