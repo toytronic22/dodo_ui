@@ -9,7 +9,8 @@ import ru.dodopizza.config.ConfigReader;
 import ru.dodopizza.config.ProjectConfiguration;
 import ru.dodopizza.config.web.WebConfig;
 import ru.dodopizza.helpers.Attach;
-
+import com.codeborne.selenide.Configuration;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
@@ -18,12 +19,22 @@ public class TestBase {
 
     @BeforeAll
     public static void configure() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
         ProjectConfiguration projectConfiguration = new ProjectConfiguration(webConfig);
         projectConfiguration.webConfig();
+        Configuration.baseUrl = "https://dodopizza.ru/moscow";
+        Configuration.browserSize = "1920x1080";
+        Configuration.timeout = 10000;
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("enableVNC", true);
+        capabilities.setCapability("enableVideo", true);
+        Configuration.browserCapabilities = capabilities;
     }
 
     @BeforeEach
+    void addListener() {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+    }
     public void setUp() {
         step("Открываем сайт", () -> {
             open("");
