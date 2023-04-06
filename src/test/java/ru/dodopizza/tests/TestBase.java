@@ -25,7 +25,7 @@ public class TestBase {
 
     @BeforeEach
     public void setUp() {
-        step("Открываем сайт dodopizza", () -> {
+        step("Открываем сайт", () -> {
             open("");
         });
     }

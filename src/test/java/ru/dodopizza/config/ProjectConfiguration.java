@@ -2,7 +2,7 @@ package ru.dodopizza.config;
 
 import com.codeborne.selenide.Configuration;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import ru.lamoda.config.web.WebConfig;
+import ru.dodopizza.config.web.WebConfig;
 
 public class ProjectConfiguration {
     private final WebConfig webConfig;
