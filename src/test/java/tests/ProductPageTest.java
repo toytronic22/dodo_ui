@@ -8,6 +8,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pages.ProductPage;
 
+import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
@@ -23,10 +24,13 @@ public class ProductPageTest extends TestBase2 {
     @DisplayName("Check Adding Exact Product to Cart")
     public void addToCartTest() {
         step("Открытие страницы - https://dodopizza.ru/moscow", () -> {
-            open("");
+            open(baseUrl);
         });
         step("Добавление продукта в корзину", () -> {
             productPage.addToCart();
+        });
+        step("Проверка добавляемого продукта", () -> {
+            productPage.checkProductTitleExists();
         });
         step("Проверка названия продукта в корзине", () -> {
             productPage.checkAddedProductTitle();
