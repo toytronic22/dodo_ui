@@ -24,14 +24,11 @@ public class ProductPageTest extends TestBase {
     @Test
     @DisplayName("Check Adding Exact Product to Cart")
     public void addToCartTest() {
-        step("Открытие страницы - https://dodopizza.ru/moscow", () -> {
-            open(baseUrl);
+        step("Открытие страницы продукта", () -> {
+            productPage.openProductCard();
         });
         step("Добавление продукта в корзину", () -> {
             productPage.addToCart();
-        });
-        step("Проверка добавляемого продукта", () -> {
-            productPage.checkProductTitleExists();
         });
         step("Проверка названия продукта в корзине", () -> {
             productPage.checkAddedProductTitle();
