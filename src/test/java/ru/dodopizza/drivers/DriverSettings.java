@@ -3,7 +3,6 @@ package ru.dodopizza.drivers;
 import com.codeborne.selenide.Configuration;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import ru.dodopizza.config.Project;
 
 public class DriverSettings {
     public static void configure() {
