@@ -1,4 +1,4 @@
-package config;
+package ru.dodopizza.config;
 
 import org.aeonbits.owner.Config;
 @Config.Sources({
@@ -16,7 +16,7 @@ public interface WebConfig extends Config {
     @DefaultValue("CHROME")
     String browserName();
     @Key("browserVersion")
-    @DefaultValue("103")
+    @DefaultValue("100")
     String browserVersion();
     @Key("remoteUrl")
     @DefaultValue("https://user1:1234@selenoid.autotests.cloud/wd/hub")

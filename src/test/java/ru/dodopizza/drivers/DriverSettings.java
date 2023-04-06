@@ -1,7 +1,7 @@
-package drivers;
+package ru.dodopizza.drivers;
 
 import com.codeborne.selenide.Configuration;
-import config.WebConfig;
+import ru.dodopizza.config.WebConfig;
 import org.aeonbits.owner.ConfigFactory;
 
 public class DriverSettings {

@@ -1,4 +1,4 @@
-package pages;
+package ru.dodopizza.pages;
 
 import com.codeborne.selenide.SelenideElement;
 
