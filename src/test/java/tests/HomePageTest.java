@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.HomePage;
 
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Configuration.baseUrl;
 import static io.qameta.allure.Allure.step;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -24,11 +24,8 @@ public class HomePageTest extends TestBase2 {
     @Tag("dodo")
     @DisplayName("Check Location and Main Menu")
     public void checkLocationAndMainMenu() {
-//        step("Открытие страницы - https://dodopizza.ru/moscow", () -> {
-//            homePage.open();
-//        });
         step("Открытие страницы - https://dodopizza.ru/moscow", () -> {
-            open("");
+            homePage.open(baseUrl);
         });
         step("Проверка локали Москва", () -> {
             assertTrue(homePage.getLocalityTitle().contains("Москва"));

@@ -1,7 +1,6 @@
 package pages;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selectors.byLinkText;
 import static com.codeborne.selenide.Selenide.$;
@@ -18,7 +17,7 @@ public class HomePage {
     private final SelenideElement aboutUsLink = $(byLinkText("О нас"));
     private final SelenideElement careersLink = $(byLinkText("Работа в Додо"));
 
-    public HomePage open() {
+    public HomePage open(String baseUrl) {
        com.codeborne.selenide.Selenide.open("");
        return this;
    }
