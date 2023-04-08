@@ -20,13 +20,13 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class MainMenuTest extends TestBase {
     MainMenu mainMenu = new MainMenu();
     @Test
-    @DisplayName("Check Location and Main Menu")
+    @DisplayName("Check Main Menu Titles")
     public void checkLocationAndMainMenu() {
         step("Открытие страницы - https://dodopizza.ru/moscow", () -> {
             mainMenu.open();
         });
-        step("Проверка локали Москва", () -> {
-            assertTrue(mainMenu.checkMainMenu());
+        step("Проверка всех пунктов меню", () -> {
+            mainMenu.checkMainMenu();
         });
     }
 }

@@ -20,7 +20,7 @@ public class MainMenu {
         com.codeborne.selenide.Selenide.open("/");
     }
 
-    public boolean checkMainMenu() {
+    public void checkMainMenu() {
         pizzaLink.shouldBe(Condition.visible);
         comboLink.shouldBe(Condition.visible);
         drinksLink.shouldBe(Condition.visible);
@@ -29,6 +29,5 @@ public class MainMenu {
         contactsLink.shouldBe(Condition.visible);
         aboutUsLink.shouldBe(Condition.visible);
         careersLink.shouldBe(Condition.visible);
-        return false;
     }
 }
