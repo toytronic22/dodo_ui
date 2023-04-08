@@ -7,6 +7,7 @@ import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
+
 public class ProductPage {
     private final SelenideElement addButton = $(byClassName("sc-8hteo7-21"));
 
@@ -30,4 +31,6 @@ public class ProductPage {
     public void checkAddedProductTitle() {
         addedProductTitle.should(exist);
     }
+
+    private final SelenideElement firstNameInput = $("#firstName");
 }

@@ -8,9 +8,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import ru.dodopizza.pages.MenuPage;
-
 import static io.qameta.allure.Allure.step;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Owner("toytronic")
 @Feature("UI тесты dodopizza.ru")

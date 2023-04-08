@@ -1,7 +1,6 @@
 package ru.dodopizza.pages;
 
 import com.codeborne.selenide.SelenideElement;
-
 import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
@@ -9,7 +8,6 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class HalvesPage {
     private final SelenideElement addButton = $(byXpath("//span[contains(.,'Добавить в корзину за 820 ₽')]"));
-
     private final SelenideElement cartButton = $(byClassName("xlo7eb-10"));
     private final SelenideElement addedProductTitle = $(byTagAndText("h3","Ветчина и сыр + Аррива!"));
 
@@ -19,7 +17,7 @@ public class HalvesPage {
     public void connectHalves() {
         $(byCssSelector(".sc-10cr63z-2:nth-child(2)")).click();
         $(byCssSelector(".sc-10cr63z-2:nth-child(3)")).click();
-    }
+        }
     public void addToCart() {
         addButton.click();
         $(byXpath("//button[contains(.,'Забрать из пиццерии')]")).click();
@@ -30,7 +28,7 @@ public class HalvesPage {
         }
         $(byCssSelector(".submit-button")).click();
         cartButton.click();
-    }
+        }
     public void checkAddedProductTitle() {
         addedProductTitle.should(exist);
     }
