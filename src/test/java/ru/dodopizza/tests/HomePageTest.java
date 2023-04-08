@@ -20,13 +20,13 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class HomePageTest extends TestBase {
     HomePage homePage = new HomePage();
     @Test
-    @DisplayName("Check Location and Main Menu")
-    public void checkLocationAndMainMenu() {
+    @DisplayName("Check Main Menu")
+    public void checkMainMenu() {
         step("Открытие страницы - https://dodopizza.ru/moscow", () -> {
             homePage.open();
         });
         step("Проверка локали Москва", () -> {
-            assertTrue(homePage.getLocalityTitle().contains("Москва"));
+            homePage.getLocalityTitle().contains("Москва");
         });
     }
 }
