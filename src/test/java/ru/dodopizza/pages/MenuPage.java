@@ -6,7 +6,7 @@ import com.codeborne.selenide.SelenideElement;
 import static com.codeborne.selenide.Selectors.byLinkText;
 import static com.codeborne.selenide.Selenide.$;
 
-public class MainMenu {
+public class MenuPage {
     private final SelenideElement pizzaLink = $(byLinkText("Пицца"));
     private final SelenideElement comboLink = $(byLinkText("Комбо"));
     private final SelenideElement drinksLink = $(byLinkText("Напитки"));

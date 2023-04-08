@@ -7,7 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
-import ru.dodopizza.pages.MainMenu;
+import ru.dodopizza.pages.MenuPage;
 
 import static io.qameta.allure.Allure.step;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -17,16 +17,16 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @Story("Главная страница dodopizza.ru")
 @Tags({@Tag("ui")})
 
-public class MainMenuTest extends TestBase {
-    MainMenu mainMenu = new MainMenu();
+public class MenuPageTest extends TestBase {
+    MenuPage menuPage = new MenuPage();
     @Test
     @DisplayName("Check Main Menu Titles")
     public void checkLocationAndMainMenu() {
         step("Открытие страницы - https://dodopizza.ru/moscow", () -> {
-            mainMenu.open();
+            menuPage.open();
         });
         step("Проверка всех пунктов меню", () -> {
-            mainMenu.checkMainMenu();
+            menuPage.checkMainMenu();
         });
     }
 }
