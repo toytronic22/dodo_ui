@@ -1,4 +1,4 @@
-# Дипломный проект по тестированию интернет-магазина [Lamoda](https://www.lamoda.ru/)
+# Дипломный проект по тестированию сервиса [Dodopizza](https://www.dodopizza.ru/)
 
 ## :open_book: Содержание:
 
@@ -35,13 +35,11 @@
 
 ## :heavy_check_mark: Тест кейсы
 
-- Проверка добавление товара в корзину
-- Проверка аутентификации пользователя
-- Проверка наличия заголовков главной страницы
-- Проверка наличия разделов на главной странице
-- Проверка наличия рекламного слогана
-- Проверка наличия блока c социальными сетями в подвале страницы
-- Проверка поиска заданного товара
+- Проверка города на главной странице
+- Проверка заголовков главного меню
+- Проверка добавления продуктов в корзину
+- Проверка сборки пиццы половинками
+- Проверка интерактивности cсылок на социальные сети
 
 ## :computer: Запуск тестов из терминала
 
@@ -56,25 +54,16 @@ gradle clean test
 ```bash
 gradle clean test
 -Dbrowser=${browser}
--DbrowserVersion=${browserVersion}
 -DbrowserSize=${browserSize}
--DremoteDriverUrl=https://%s:%s@${REMOTE_DRIVER_URL}/wd/hub/
 ```
 ## Примеры использования
 
 ### Для запуска удаленных тестов необходимо заполнить remote.properties или передать значение:
 
 * browser (браузер, по умолчанию chrome)
-* browserVersion (версия браузера, по умолчанию 100.0)
 * browserSize (размер окна браузера, по умолчанию 1920x1080)
-* remoteDriverUrl (url адрес selenoid)
-* videoStorage (url адрес с видео прохождения тестов)
 
-Логин и пароль извлекаются из соответствующего файла конфигурации:
-```bash
-./resources/config/credentials.properties
-```
-## <img width="4%" title="Jenkins" src="media/logo/Jenkins.svg"> Запуск тестов из [Jenkins](https://jenkins.autotests.cloud/job/015_aziyatdinov_final_ui/)
+## <img width="4%" title="Jenkins" src="media/logo/Jenkins.svg"> Запуск тестов из [Jenkins](https://jenkins.autotests.cloud/job/C017-toytronic-final_dodo_ui/)
 Для запуска сборки необходимо перейти в раздел <code><strong>*Собрать с параметрами*</strong></code> и нажать кнопку <code><strong>*Собрать*</strong></code>.
 
 <p align="center">
@@ -84,7 +73,7 @@ gradle clean test
 После выполнения сборки, в блоке <code><strong>*История сборок*</strong></code> напротив номера сборки появится
 значок *Allure Report* и *Allure TestOps* кликнув по которому, откроется страница с сформированным html-отчетом и тестовой документацией.
 
-## <img width="4%" title="Allure Report" src="media/logo/Allure_Report.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/015_aziyatdinov_final_ui/1/allure/)
+## <img width="4%" title="Allure Report" src="media/logo/Allure_Report.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/C017-toytronic-final_dodo_ui/22/allure)
 
 <p align="center">
   <img src="media/screen/jenkins_overview.png" alt="allure-report" width="900">
@@ -94,7 +83,7 @@ gradle clean test
   <img src="media/screen/jenkins_behaviors.png" alt="allure-report_1" width="900">
 </p>
 
-## <img width="4%" title="Allure TestOPS" src="media/logo/Allure_TO.svg"> Интеграция с [Allure TestOps](https://allure.autotests.cloud/launch/18485)
+## <img width="4%" title="Allure TestOPS" src="media/logo/Allure_TO.svg"> Интеграция с [Allure TestOps](https://allure.autotests.cloud/launch/21955)
 
 ### Основной дашборд
 
@@ -125,5 +114,5 @@ gradle clean test
 В отчетах Allure для каждого теста прикреплен не только скриншот, но и видео прохождения теста
 
 <p align="center">
-  <img title="Video" src="media/video/Lamoda_tests.gif">
+  <img title="Video" src="media/video/pizzatest.gif">
 </p>
