@@ -7,7 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
-import ru.dodopizza.pages.HomePage;
+import ru.dodopizza.pages.MainMenu;
 
 import static io.qameta.allure.Allure.step;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -17,16 +17,16 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @Story("Главная страница dodopizza.ru")
 @Tags({@Tag("ui")})
 
-public class HomePageTest extends TestBase {
-    HomePage homePage = new HomePage();
+public class MainMenuTest extends TestBase {
+    MainMenu mainMenu = new MainMenu();
     @Test
     @DisplayName("Check Location and Main Menu")
     public void checkLocationAndMainMenu() {
         step("Открытие страницы - https://dodopizza.ru/moscow", () -> {
-            homePage.open();
+            mainMenu.open();
         });
         step("Проверка локали Москва", () -> {
-            assertTrue(homePage.getLocalityTitle().contains("Москва"));
+            assertTrue(mainMenu.checkMainMenu());
         });
     }
 }

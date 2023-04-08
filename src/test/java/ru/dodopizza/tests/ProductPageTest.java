@@ -13,7 +13,7 @@ import static io.qameta.allure.Allure.step;
 
 @Owner("toytronic")
 @Feature("UI тесты dodopizza.ru")
-@Story("Главная страница dodopizza.ru")
+@Story("Проверка флоу продукт-корзина. Работает только если работает пиццерия")
 @Tags({@Tag("ui")})
 
 public class ProductPageTest extends TestBase {
