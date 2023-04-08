@@ -48,7 +48,6 @@ public class TestBase {
         Attach.pageSource();
         Attach.browserConsoleLogs();
         Attach.addVideo();
-        clearBrowserCookies();
         clearBrowserLocalStorage();
         closeWindow();
 
