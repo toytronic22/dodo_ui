@@ -1,38 +1,14 @@
 package ru.dodopizza.pages;
-
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.SelenideElement;
-
-import static com.codeborne.selenide.Selectors.byLinkText;
+import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
 
 public class HomePage {
-    private final SelenideElement localityTitle = $(".header__about-slogan-text_locality");
-    private final SelenideElement pizzaLink = $(byLinkText("Пицца"));
-    private final SelenideElement comboLink = $(byLinkText("Комбо"));
-    private final SelenideElement drinksLink = $(byLinkText("Напитки"));
-    private final SelenideElement otherProductsLink = $(byLinkText("Другие товары"));
-    private final SelenideElement promotionsLink = $(byLinkText("Акции"));
-    private final SelenideElement contactsLink = $(byLinkText("Контакты"));
-    private final SelenideElement aboutUsLink = $(byLinkText("О нас"));
-    private final SelenideElement careersLink = $(byLinkText("Работа в Додо"));
 
     public void open() {
        com.codeborne.selenide.Selenide.open("/");
     }
-    public String getLocalityTitle() {
-        return localityTitle.getText();
+    public void getLocalityTitle(){
+        $(byCssSelector(".header__about-slogan-text_locality")).shouldHave(text("Москва"));
     }
-
-    public void checkMainMenu() {
-        pizzaLink.shouldBe(Condition.visible);
-        comboLink.shouldBe(Condition.visible);
-        drinksLink.shouldBe(Condition.visible);
-        otherProductsLink.shouldBe(Condition.visible);
-        promotionsLink.shouldBe(Condition.visible);
-        contactsLink.shouldBe(Condition.visible);
-        aboutUsLink.shouldBe(Condition.visible);
-        careersLink.shouldBe(Condition.visible);
-    }
-
 }

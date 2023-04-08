@@ -10,7 +10,6 @@ import org.junit.jupiter.api.Test;
 import ru.dodopizza.pages.HomePage;
 
 import static io.qameta.allure.Allure.step;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Owner("toytronic")
 @Feature("UI тесты dodopizza.ru")
@@ -20,13 +19,13 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class HomePageTest extends TestBase {
     HomePage homePage = new HomePage();
     @Test
-    @DisplayName("Check Main Menu")
-    public void checkMainMenu() {
+    @DisplayName("Check Locality")
+    public void checkLocality() {
         step("Открытие страницы - https://dodopizza.ru/moscow", () -> {
             homePage.open();
         });
         step("Проверка локали Москва", () -> {
-            homePage.getLocalityTitle().contains("Москва");
+            homePage.getLocalityTitle();
         });
     }
 }
