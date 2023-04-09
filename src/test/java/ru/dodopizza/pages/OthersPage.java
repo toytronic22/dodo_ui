@@ -3,15 +3,14 @@ package ru.dodopizza.pages;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
-import static com.codeborne.selenide.Selectors.byCssSelector;
-import static com.codeborne.selenide.Selectors.byLinkText;
+import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
 
 public class OthersPage {
-    private final SelenideElement booksLink = $(byCssSelector(".sc-1tpn8pe-3:nth-child(2) .loaded"));
-    private final SelenideElement drawBookLink = $(byLinkText("Додо Раскраска"));
-    private final SelenideElement beakLink = $(byLinkText("Додо Клюв"));
-    private final SelenideElement capLink = $(byLinkText("Додо Колпак"));
+    private final SelenideElement booksLink = $(byText("Додо Книги 1+2"));
+    private final SelenideElement drawBookLink = $(byText("Додо Раскраска"));
+    private final SelenideElement beakLink = $(byText("Додо Клюв"));
+    private final SelenideElement capLink = $(byText("Додо Колпак"));
 
     public void  open() {
         com.codeborne.selenide.Selenide.open("https://dodopizza.ru/moscow#other");
