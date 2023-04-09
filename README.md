@@ -73,7 +73,7 @@ gradle clean test
 </p>
 
 После выполнения сборки, в блоке <code><strong>*История сборок*</strong></code> напротив номера сборки появится
-значок *Allure Report* и *Allure TestOps* кликнув по которому, откроется страница с сформированным html-отчетом и тестовой документацией.
+значок *Allure Report* и *Allure TestOps* кликнув по которому откроется страница с сформированным html-отчетом и тестовой документацией.
 
 ## <img width="4%" title="Allure Report" src="media/logo/Allure_Report.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/C017-toytronic-final_dodo_ui/22/allure)
 
