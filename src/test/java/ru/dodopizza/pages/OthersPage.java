@@ -13,7 +13,7 @@ public class OthersPage {
     private final SelenideElement capLink = $(byText("Додо Колпак"));
 
     public void  open() {
-        com.codeborne.selenide.Selenide.open("https://dodopizza.ru/moscow#other");
+        com.codeborne.selenide.Selenide.open("https://dodopizza.ru/moscow");
     }
 
     public void checkProducts() {

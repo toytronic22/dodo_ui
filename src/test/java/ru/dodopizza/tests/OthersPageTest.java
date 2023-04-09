@@ -20,7 +20,7 @@ public class OthersPageTest extends TestBase {
     @Test
     @DisplayName("Check Main Menu Titles")
     public void checkOthersPage() {
-        step("Открытие страницы - https://dodopizza.ru/moscow#other", () -> {
+        step("Открытие страницы - https://dodopizza.ru/moscow", () -> {
             othersPage.open();
         });
         step("Проверка всех пунктов меню", () -> {
