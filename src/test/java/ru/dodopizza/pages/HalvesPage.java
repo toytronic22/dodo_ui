@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class HalvesPage {
     private final SelenideElement addButton = $(byXpath("//span[contains(.,'Добавить в корзину за 820 ₽')]"));
-    private final SelenideElement cartButton = $(byClassName("xlo7eb-10"));
+    private final SelenideElement cartButton = $(byId("navigation__cart"));
     private final SelenideElement addedProductTitle = $(byTagAndText("h3","Ветчина и сыр + Аррива!"));
 
     public void openHalvesCard() {
