@@ -24,7 +24,7 @@ public class TestBase {
         projectConfiguration.webConfig();
         Configuration.baseUrl = "https://dodopizza.ru/moscow";
         Configuration.browserSize = "1920x1080";
-        Configuration.timeout = 10000;
+        Configuration.timeout = 5000;
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
@@ -36,11 +36,11 @@ public class TestBase {
     void addListener() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
-    public void setUp() {
-        step("Открываем сайт", () -> {
-            open("");
-        });
-    }
+//    public void setUp() {
+//        step("Открываем сайт", () -> {
+//            open("");
+//        });
+//    }
 
     @AfterEach
     void addAttachments() {
