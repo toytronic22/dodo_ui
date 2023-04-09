@@ -7,7 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
-import ru.dodopizza.pages.OthersPage;
+import ru.dodopizza.pages.BonusPage;
 import static io.qameta.allure.Allure.step;
 
 @Owner("toytronic")
@@ -15,16 +15,16 @@ import static io.qameta.allure.Allure.step;
 @Story("Главная страница dodopizza.ru")
 @Tags({@Tag("ui")})
 
-public class OthersPageTest extends TestBase {
-    OthersPage othersPage = new OthersPage();
+public class BonusPageTest extends TestBase {
+    BonusPage bonusPage = new BonusPage();
     @Test
-    @DisplayName("Check Other Products")
+    @DisplayName("Check Main Menu Titles")
     public void checkOthersPage() {
         step("Открытие страницы - https://dodopizza.ru/moscow", () -> {
-            othersPage.open();
+            bonusPage.open();
         });
-        step("Проверка продуктов категории", () -> {
-            othersPage.checkProducts();
+        step("Проверка всех пунктов меню", () -> {
+            bonusPage.checkProducts();
         });
     }
 }
