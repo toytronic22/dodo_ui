@@ -3,11 +3,12 @@ package ru.dodopizza.pages;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
+import static com.codeborne.selenide.Selectors.byCssSelector;
 import static com.codeborne.selenide.Selectors.byLinkText;
 import static com.codeborne.selenide.Selenide.$;
 
 public class OthersPage {
-    private final SelenideElement booksLink = $(byLinkText("Додо Книги 1+2"));
+    private final SelenideElement booksLink = $(byCssSelector(".sc-1tpn8pe-3:nth-child(2) .loaded"));
     private final SelenideElement drawBookLink = $(byLinkText("Додо Раскраска"));
     private final SelenideElement beakLink = $(byLinkText("Додо Клюв"));
     private final SelenideElement capLink = $(byLinkText("Додо Колпак"));
