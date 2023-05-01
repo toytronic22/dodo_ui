@@ -1,5 +1,6 @@
 package ru.dodopizza.config.web;
 
-public enum Browser {
-    chrome, firefox
+public class Browser {
+    public static final String CHROME = "chrome";
+    public static final String FIREFOX = "firefox";
 }
