@@ -16,12 +16,10 @@ public class ProjectConfiguration {
         Configuration.browser = webConfig.browser();
         Configuration.browserVersion = webConfig.browserVersion();
         Configuration.browserSize = webConfig.browserSize();
-        if (webConfig.isRemote()) {
-            Configuration.remote = webConfig.remoteUrl();
-            DesiredCapabilities capabilities = new DesiredCapabilities();
-            capabilities.setCapability("enableVNC", true);
-            capabilities.setCapability("enableVideo", true);
-            Configuration.browserCapabilities = capabilities;
-        }
+        Configuration.remote = webConfig.remoteUrl();
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("enableVNC", true);
+        capabilities.setCapability("enableVideo", true);
+        Configuration.browserCapabilities = capabilities;
     }
 }
