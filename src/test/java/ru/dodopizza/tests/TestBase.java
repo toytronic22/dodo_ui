@@ -36,11 +36,6 @@ public class TestBase {
     void addListener() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
-//    public void setUp() {
-//        step("Открываем сайт", () -> {
-//            open("");
-//        });
-//    }
 
     @AfterEach
     void addAttachments() {
