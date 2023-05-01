@@ -15,7 +15,6 @@ import static io.qameta.allure.Allure.step;
 @Feature("UI тесты dodopizza.ru")
 @Story("Главная страница dodopizza.ru")
 @Tags({@Tag("ui")})
-
 public class HomePageTest extends TestBase {
     HomePage homePage = new HomePage();
     @Test
