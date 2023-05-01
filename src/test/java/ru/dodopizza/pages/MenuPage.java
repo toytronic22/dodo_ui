@@ -1,33 +1,38 @@
 package ru.dodopizza.pages;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.SelenideElement;
-
 import static com.codeborne.selenide.Selectors.byLinkText;
 import static com.codeborne.selenide.Selenide.$;
 
 public class MenuPage {
-    private final SelenideElement pizzaLink = $(byLinkText("Пицца"));
-    private final SelenideElement comboLink = $(byLinkText("Комбо"));
-    private final SelenideElement drinksLink = $(byLinkText("Напитки"));
-    private final SelenideElement otherProductsLink = $(byLinkText("Другие товары"));
-    private final SelenideElement promotionsLink = $(byLinkText("Акции"));
-    private final SelenideElement contactsLink = $(byLinkText("Контакты"));
-    private final SelenideElement aboutUsLink = $(byLinkText("О нас"));
-    private final SelenideElement careersLink = $(byLinkText("Работа в Додо"));
+    private enum MenuItems {
+        PIZZA("Пицца"),
+        COMBO("Комбо"),
+        DRINKS("Напитки"),
+        OTHER_PRODUCTS("Другие товары"),
+        PROMOTIONS("Акции"),
+        CONTACTS("Контакты"),
+        ABOUT_US("О нас"),
+        CAREERS("Работа в Додо");
+
+        private final String linkText;
+
+        MenuItems(String linkText) {
+            this.linkText = linkText;
+        }
+
+        public String getLinkText() {
+            return linkText;
+        }
+    }
 
     public void open() {
         com.codeborne.selenide.Selenide.open("/");
     }
 
     public void checkMainMenu() {
-        pizzaLink.shouldBe(Condition.visible);
-        comboLink.shouldBe(Condition.visible);
-        drinksLink.shouldBe(Condition.visible);
-        otherProductsLink.shouldBe(Condition.visible);
-        promotionsLink.shouldBe(Condition.visible);
-        contactsLink.shouldBe(Condition.visible);
-        aboutUsLink.shouldBe(Condition.visible);
-        careersLink.shouldBe(Condition.visible);
+        for (MenuItems item : MenuItems.values()) {
+            $(byLinkText(item.getLinkText())).shouldBe(Condition.visible);
+        }
     }
 }
