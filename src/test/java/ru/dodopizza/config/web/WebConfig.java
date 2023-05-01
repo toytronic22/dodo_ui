@@ -24,6 +24,10 @@ public interface WebConfig extends Config {
     @DefaultValue("https://www.dodopizza.ru/moscow")
     String baseUrl();
 
+    @Key("isRemote")
+    @DefaultValue("false")
+    boolean isRemote();
+
     @Key("remoteUrl")
     @DefaultValue("https://user1:1234@selenoid.autotests.cloud/wd/hub")
     String remoteUrl();
