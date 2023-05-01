@@ -10,7 +10,7 @@ import org.aeonbits.owner.Config;
 public interface WebConfig extends Config {
     @Key("browser")
     @DefaultValue("chrome")
-    Browser browser();
+    String browser();
 
     @Key("browserVersion")
     @DefaultValue("100.0")
