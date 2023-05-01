@@ -18,6 +18,20 @@ import static com.codeborne.selenide.Selenide.*;
 public class TestBase {
     private static final WebConfig webConfig = ConfigReader.Instance.read();
 
+    @BeforeAll
+    public static void configure() {
+        ProjectConfiguration projectConfiguration = new ProjectConfiguration(webConfig);
+        projectConfiguration.webConfig();
+        Configuration.baseUrl = "https://dodopizza.ru/moscow";
+        Configuration.browserSize = "1920x1080";
+        Configuration.timeout = 5000;
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("enableVNC", true);
+        capabilities.setCapability("enableVideo", true);
+        Configuration.browserCapabilities = capabilities;
+    }
+
     @BeforeEach
     void addListener() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
