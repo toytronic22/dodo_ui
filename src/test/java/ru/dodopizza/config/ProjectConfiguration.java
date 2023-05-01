@@ -12,15 +12,9 @@ public class ProjectConfiguration {
     }
 
     public void webConfig() {
-        Configuration.timeout = 5000;
         Configuration.baseUrl = webConfig.baseUrl();
         Configuration.browser = webConfig.browser();
-        Configuration.browserVersion = webConfig.browserVersion();
         Configuration.browserSize = webConfig.browserSize();
         Configuration.remote = webConfig.remoteUrl();
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("enableVNC", true);
-        capabilities.setCapability("enableVideo", true);
-        Configuration.browserCapabilities = capabilities;
     }
 }
