@@ -49,13 +49,6 @@ tasks.withType(Test) {
         }
     }
 }
-
-task lamoda_ui_tests(type: Test) {
-    useJUnitPlatform{
-        includeTags "dodopizza_UI"
-    }
-}
-
 test {
     useJUnitPlatform()
 }
