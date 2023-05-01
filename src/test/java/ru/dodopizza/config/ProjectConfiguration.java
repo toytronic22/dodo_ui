@@ -12,6 +12,7 @@ public class ProjectConfiguration {
     }
 
     public void webConfig() {
+        Configuration.timeout = 5000;
         Configuration.baseUrl = webConfig.baseUrl();
         Configuration.browser = webConfig.browser();
         Configuration.browserVersion = webConfig.browserVersion();
