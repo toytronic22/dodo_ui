@@ -24,8 +24,8 @@ public class HomePageTest extends TestBase {
         step("Открытие страницы - https://dodopizza.ru/moscow", () -> {
             homePage.open();
         });
-        step("Проверка локали Москва", () -> {
-            homePage.getLocalityTitle();
+        step("Проверка локали", () -> {
+            homePage.verifyLocation("Москва");
         });
     }
 }
