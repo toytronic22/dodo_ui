@@ -31,6 +31,4 @@ public class ProductPage {
     public void checkAddedProductTitle() {
         addedProductTitle.should(exist);
     }
-
-    private final SelenideElement firstNameInput = $("#firstName");
 }
