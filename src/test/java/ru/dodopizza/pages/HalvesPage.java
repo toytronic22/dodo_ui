@@ -25,7 +25,8 @@ public class HalvesPage {
         $(byXpath("//button[contains(.,'Забрать из пиццерии')]")).click();
         try {
             Thread.sleep(1000);
-        } catch (InterruptedException e) {
+        }
+        catch (InterruptedException e) {
             e.printStackTrace();
         }
         $(byCssSelector(".submit-button")).click();
