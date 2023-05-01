@@ -15,7 +15,6 @@ import static io.qameta.allure.Allure.step;
 @Feature("UI тесты dodopizza.ru")
 @Story("Проверка сборки половинок. Работает только если работает пиццерия")
 @Tags({@Tag("products")})
-
 public class HalvesPageTest extends TestBase {
     HalvesPage halvesPage = new HalvesPage();
 
