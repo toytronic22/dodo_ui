@@ -1,6 +1,5 @@
-//package ru.dodopizza.config.web;
+package ru.dodopizza.config.web;
 
-//public enum Browser {
-//
-//chrome, firefox
-//}
+public enum Browser {
+    chrome, firefox
+}
